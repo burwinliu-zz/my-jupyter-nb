@@ -1,0 +1,3 @@
+Initial Method failed -- naive solution with standard loop through items of query and then adding each value to a tracking array then checking each length if it is greater is inacapable of producing proper answer. Sad days
+
+Need to figure out better way of algorithm, maybe looping throuh and finding all intervals?
