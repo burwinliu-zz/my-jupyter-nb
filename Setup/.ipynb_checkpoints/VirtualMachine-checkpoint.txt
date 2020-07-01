@@ -1,0 +1,41 @@
+Setting up virtual machine (9/9/2019)
+
+1) Install ubuntu Setup Network to be bridged and add ubuntu install disk to storage controller with 1/4 RAM
+2) Have Ubuntu and Guest additions (Under Devices Guest addition CD images)
+3) Run ip -h address to find IP to ssh to from main system side
+4) install openssh-server, git
+5) install vim-runtime and vim-gui-common
+6) install curl
+6) run 
+
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+7) setup vim plugins by vi ~/.vimrc and add 
+
+call plug#begin('~/.vim/plugged')
+
+call plug#end()
+
+THEN call :PlugInstall after :wq
+
+8) Have the ~/.vimrc be the following:
+
+call plug#begin('~/.vim/plugged')
+Plug 'https://github.com/scrooloose/nerdtree'
+" List ends here. Plugins become visible to Vim after this call.
+call plug#end()
+syntax enable
+set background=dark
+colorscheme pablo
+"
+" NERDTree stuff
+call plug#begin('~/.vim/plugged')
+Plug 'https://github.com/scrooloose/nerdtree'
+Plug 'neovimhaskell/haskell-vim'
+autocmd StdinReadPre * let s:std_in=1
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd w 
+map <C-o> :NERDTreeToggle<CR>                                          
+    
