@@ -32,7 +32,7 @@ colorscheme pablo
 " NERDTree stuff
 call plug#begin('~/.vim/plugged')
 Plug 'https://github.com/scrooloose/nerdtree'
-Plug 'neovimhaskell/haskell-vim'
+
 autocmd StdinReadPre * let s:std_in=1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 autocmd VimEnter * NERDTree
